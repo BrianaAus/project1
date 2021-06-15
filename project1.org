@@ -47,3 +47,17 @@
 
 + https://developer.marvel.com/
 + Public key: 57a9282eee09f642116d68d165ec7808
+
+* To-Do
++ How do we implement each question? // DONE
+ - Do we make a page each question? //DONE
+ - Make a file, write questions /w answers, and pull from that file //DONE
+
++ What are our possible characters? 
++ How do we arrive at a character? 
+
++ How do we save the answers that are chosen? 
+
++ Create a results page
+
++ How to actually pull from the API, and what are we pulling? 
