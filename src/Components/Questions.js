@@ -1,6 +1,6 @@
 import './Questions.css';
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import AppContext from "../Contexts/AppContext";
 
 const Questions = () => {
@@ -15,7 +15,7 @@ function questionMaker(question,answer1,answer2,answer3,answer4,answer5,answer6)
             answer6:answer6}
 }
 
-let {currentQuestion, setCurrentQuestion, arrayOfAnswers, setArrayOfAnswers } = useContext(AppContext) 
+let {currentQuestion, setCurrentQuestion, arrayOfAnswers, setArrayOfAnswers, winningHero, setWinningHero } = useContext(AppContext) 
 
 const arrayOfQuestions = [
     
@@ -52,42 +52,47 @@ const arrayOfQuestions = [
         'Volcano'),
 ]
 
-console.log('State, currentQuestion: ', currentQuestion)
-console.log('State, arrayOfAnswers: ', arrayOfAnswers)
-
 function Previous(props){
 
     if(props.currentQuestion <= 0){
+
         return (<div className="previous clickable"><Link exact to ='/'><p>Back</p></Link></div>)
     }
     else {
+
         return(<div onClick={handlePrevious} className="previous clickable"><p>Previous</p></div>)
     }
 }
 
 function Next(props){
 
-    if(props.currentQuestion >= arrayOfQuestions.length - 1){
+    if(props.currentQuestion >= arrayOfQuestions.length - 1) {
+
         return (<div onClick={()=>{handleNext()}} className="next clickable hidden"><Link exact to ='/results'><p>Submit</p></Link></div>)
     }
+
     else {
+
         return(<div onClick={() => {handleNext()}} className="next clickable hidden"><p>Next</p></div>)
     }
 }
 
 function handleNext() {
-
-    console.log('handleNext() has fired.')
     
     let answers = document.getElementsByClassName('answer')
 
+    // Find answers that is selected
     for(let i=0;i<answers.length;i+=1){
+        
         if(answers[i].classList.contains('selected')){
+
             setArrayOfAnswers([...arrayOfAnswers, answers[i].id])
         }  
     }
 
+    // Remove selected from all answers
     for(let i=0;i<answers.length;i+=1){
+
         answers[i].classList.remove('selected')
     }
 
@@ -102,13 +107,84 @@ function handlePrevious() {
 }
 
 function selectAnswer(e) {
+
     let answers = document.getElementsByClassName('answer')
+
     for(let i=0;i<answers.length;i+=1){
        answers[i].classList.remove('selected')
     }
-    e.target.classList.add('selected')  
+
+    e.target.classList.add('selected')
+
     document.querySelector('.next').classList.remove('hidden')
 }
+
+function countAnswers(arrayOfAnswers, results = { answer1 : 0, answer2 : 0, answer3 : 0, answer4 : 0, answer5 : 0, answer6 : 0, answer7: 0}) {
+        
+    for(const answer in results){
+        
+        if(arrayOfAnswers[0] === answer){
+
+            results[answer] = results[answer]+=1
+        }
+    }
+
+    // Pop the first thing out of the array (make it smaller)
+    arrayOfAnswers.shift()
+
+    // Base Case: When our array is empty
+    if(arrayOfAnswers <= 0) {
+
+        return results
+    }
+
+    else{
+
+        return countAnswers(arrayOfAnswers, results)
+    }
+}
+
+useEffect(() => {
+
+    let countOfAnswers = countAnswers(arrayOfAnswers)
+
+    let winningAnswer = Object.keys(countOfAnswers).reduce((a, b) => {
+
+        return countOfAnswers[a] > countOfAnswers[b] ? a : b
+
+    })
+
+    // Return appropriate hero
+    let superHero = (winningAnswer) => {
+
+        switch(winningAnswer) {
+            
+            case 'answer1':
+            return 'Thor' 
+            
+            case 'answer2':
+            return 'Iron Man'
+            
+            case 'answer3':
+            return 'Captain America'
+            
+            case 'answer4':
+            return 'Black Widow'
+
+            case 'answer5':
+            return 'Hawkeye'
+
+            case 'answer6':
+            return 'Hulk'
+            
+            default:
+            return ' not worthy!'
+        }
+    } 
+
+    setWinningHero(superHero(winningAnswer))
+
+}, [arrayOfAnswers])
 
     return(
         <header className="App-header">

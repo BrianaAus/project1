@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useContext } from 'react'
+import AppContext from "../Contexts/AppContext";
 import './Home.css';
 
 function Home() {
+
+  let { setCurrentQuestion } = useContext(AppContext)
+  
+  setCurrentQuestion(0)
 
     return(
 

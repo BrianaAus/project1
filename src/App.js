@@ -10,6 +10,8 @@ function App() {
 
   let [currentQuestion, setCurrentQuestion] = useState(0) 
   let [arrayOfAnswers, setArrayOfAnswers] = useState([])
+  let [winningHero, setWinningHero] = useState('')
+  let [winningHeroThumbnail, setWinningHeroThumbnail] = useState({})
 
   return (
   <AppContext.Provider
@@ -17,7 +19,11 @@ function App() {
       currentQuestion, 
       setCurrentQuestion,
       arrayOfAnswers,
-      setArrayOfAnswers
+      setArrayOfAnswers,
+      winningHero,
+      setWinningHero,
+      winningHeroThumbnail,
+      setWinningHeroThumbnail
     }}>
   <div className="App-background"></div>
     <div className="App">

@@ -46,12 +46,12 @@
 
 
   ----------
-  Black Widow  -- Super Spy
-  Captain America -- Super Soldier
-  Iron Man 
-  Hulk
-  Hawk Eye 
-  Thor 
+  Black Widow  -- Super Spy -- 1009189
+  Captain America -- Super Soldier -- 1009220
+  Iron Man -- Super Genius -- 1009368
+  Hulk -- Super Smash -- 1009351
+  Hawk Eye -- Super Aim -- 1009338
+  Thor -- Super Hair -- 1009664
 
 ** API
 
@@ -68,6 +68,9 @@
 
 + How do we save the answers that are chosen? // DONE
 
++ Getting a result from our answers // DONE
 + Create a results page // IN PROGRESS
 
 + How to actually pull from the API, and what are we pulling? 
+
+http://gateway.marvel.com/v1/public/characters?ts=1&apikey=57a9282eee09f642116d68d165ec7808&hash=a0bf7203d0c30c222375c89f716f66be
