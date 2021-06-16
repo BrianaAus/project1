@@ -26,10 +26,11 @@
 ** Example Questions:
 
 + If you could choose one power, which one would it be?
-  - Super Strength
-  - Invisibility
+  - Super Strength //captain
+  - Invisibility 
   - Flying
   - Super Intelligence
+  - Form Changing  
 
 + If your friends described you in one word, what would it be?
   - Humble
@@ -43,6 +44,15 @@
   - Hawkeye
   - Loki
 
+
+  ----------
+  Black Widow  -- Super Spy
+  Captain America -- Super Soldier
+  Iron Man 
+  Hulk
+  Hawk Eye 
+  Thor 
+
 ** API
 
 + https://developer.marvel.com/
@@ -53,11 +63,11 @@
  - Do we make a page each question? //DONE
  - Make a file, write questions /w answers, and pull from that file //DONE
 
-+ What are our possible characters? 
-+ How do we arrive at a character? 
++ What are our possible characters? // DONE (The Avengers)
++ How do we arrive at a character?  // DONE 
 
-+ How do we save the answers that are chosen? 
++ How do we save the answers that are chosen? // DONE
 
-+ Create a results page
++ Create a results page // IN PROGRESS
 
 + How to actually pull from the API, and what are we pulling? 
