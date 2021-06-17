@@ -2,10 +2,29 @@
     background-color: #FFFF00;
     border: 3px solid black;
     color: #000;
-    padding: 20px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.description {
+    background-color: #FFFF00;
+    border: 3px solid black;
+    color: #000;
+    padding: 10px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .thumbnail {
     height: 360px;
     margin-bottom: 40px;
+}
+
+img {
+    border: 3px solid black;
+}
+
+button {
+    font-weight: bold;
 }

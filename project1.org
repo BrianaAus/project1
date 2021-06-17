@@ -71,6 +71,14 @@
 + Getting a result from our answers // DONE
 + Create a results page // IN PROGRESS
 
-+ How to actually pull from the API, and what are we pulling? 
++ How to actually pull from the API, and what are we pulling? // DONE
 
 http://gateway.marvel.com/v1/public/characters?ts=1&apikey=57a9282eee09f642116d68d165ec7808&hash=a0bf7203d0c30c222375c89f716f66be
+
+** Extra To-Dos 
+
++ Find comic book font
++ Add description results page
++ Error-handling for results fetch
++ Find another background image
++ More questions

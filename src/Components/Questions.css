@@ -10,7 +10,6 @@
     border: 3px solid #000;
     background-color: #FFFF00;
     color: #000;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +76,8 @@
 
 .questions-container .selected{
     background-color: red;
+    color: black;
+    border-color: black;
 }
 
 .selected:hover {

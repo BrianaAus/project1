@@ -13,16 +13,16 @@ function Home() {
 
       <header className="App-header">
         
-        <img src={'https://www.sideshow.com/storage/product-images/501023U/excelsior_pow-entertainment_silo_lg.png'} className="App-logo" alt="logo" />
+        <img src={'https://i.pinimg.com/originals/ed/d1/b8/edd1b8723c175517c85ffee2f6c2e0a9.jpg'} className="App-logo" alt="logo" />
         
         <p className="intro">
-          Which Marvel Character are you? 👀
+          Which MCU Avenger are you!?
         </p>
         
         <Link exact to = '/questions'>
         
           <button name="TakeQuiz">
-            Click here to take the quiz!
+            CLICK HERE TO TAKE THE QUIZ!
           </button>
         
         </Link>

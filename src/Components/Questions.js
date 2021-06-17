@@ -5,7 +5,8 @@ import AppContext from "../Contexts/AppContext";
 
 const Questions = () => {
 
-function questionMaker(question,answer1,answer2,answer3,answer4,answer5,answer6){
+    function questionMaker(question,answer1,answer2,answer3,answer4,answer5,answer6) {
+    
     return {question: question,
             answer1: answer1, 
             answer2:answer2,
@@ -15,41 +16,89 @@ function questionMaker(question,answer1,answer2,answer3,answer4,answer5,answer6)
             answer6:answer6}
 }
 
-let {currentQuestion, setCurrentQuestion, arrayOfAnswers, setArrayOfAnswers, winningHero, setWinningHero } = useContext(AppContext) 
+let {currentQuestion, setCurrentQuestion, arrayOfAnswers, setArrayOfAnswers, setWinningHero } = useContext(AppContext) 
 
 const arrayOfQuestions = [
     
     questionMaker('If you could have one superpower, what would it be?',
-        'Super Strength',
-        'Invisibility',
+        'Flying',
         'Super Intelligence',
-        'Super Speed',
-        'Telekinesis',
+        'Super Strength',
+        'Invisiblity',
+        'Invulnerability',
         'Weapon Mastery'),
     
     questionMaker('If your friends described you in one word, what would it be?',
-        'Humble',
         'Adventurous',
-        'Devious',
         'Witty',
+        'Humble',
+        'Devious',
         'Angry',
-        'Nervous'),
+        'Calm'),
 
     questionMaker('Who would you choose to fight by your side?',
-        'War Machine',
-        'Winter Solider',
-        'Nick Fury',
         'Loki',
-        'Rocket Raccoon',
-        'Falcon'),
+        'War Machine',
+        'Falcon',
+        'Winter Soilder',
+        'Nick Fury',
+        'Valkyrie'),
 
     questionMaker('Where would your secret lair/headquarters be?',
+        'In outer space',
         'In a mountain',
-        'Under the sea',
-        'Wakanda',
-        'New York',
-        'Outer Space',
-        'Volcano'),
+        'In a city',
+        'The arctic circle',
+        'A secluded forest',
+        'A volcano'),
+
+    questionMaker('What is your biggest weakness?',
+        'You have an ego',
+        'You have a need to control',
+        'You are too trusting',
+        'You hate people',
+        'You have a temper',
+        'You lack confidence'),
+
+    questionMaker('What of these is your favorite food?',
+        'Steak',
+        'Caviar',
+        'Apple Pie',
+        'Shrimp Cocktail',
+        'Spinach',
+        'Double Cheeseburger'),
+
+    questionMaker('Which of these do you want the most?',
+        'Fame',
+        'Money',
+        'Safety',
+        'Security',
+        'Freedom',
+        'Recognition'),
+
+    questionMaker('What is your favorite color?',
+        'Purple',
+        'Yellow',
+        'Blue',
+        'Red',
+        'Green',
+        'Orange'),
+
+    questionMaker('Which of these intrigues you the most?',
+        'Mythology',
+        'Economics',
+        'History',
+        'Acrobatics',
+        'Science',
+        'Geometry'), 
+        
+    questionMaker('Which animal are you most like?',
+        'Frog',
+        'Hawk',
+        'Dog',
+        'Monkey',
+        'Gorilla',
+        'Cat')   
 ]
 
 function Previous(props){
@@ -58,6 +107,7 @@ function Previous(props){
 
         return (<div className="previous clickable"><Link exact to ='/'><p>Back</p></Link></div>)
     }
+
     else {
 
         return(<div onClick={handlePrevious} className="previous clickable"><p>Previous</p></div>)
@@ -81,7 +131,6 @@ function handleNext() {
     
     let answers = document.getElementsByClassName('answer')
 
-    // Find answers that is selected
     for(let i=0;i<answers.length;i+=1){
         
         if(answers[i].classList.contains('selected')){
@@ -90,7 +139,6 @@ function handleNext() {
         }  
     }
 
-    // Remove selected from all answers
     for(let i=0;i<answers.length;i+=1){
 
         answers[i].classList.remove('selected')
@@ -129,10 +177,8 @@ function countAnswers(arrayOfAnswers, results = { answer1 : 0, answer2 : 0, answ
         }
     }
 
-    // Pop the first thing out of the array (make it smaller)
     arrayOfAnswers.shift()
 
-    // Base Case: When our array is empty
     if(arrayOfAnswers <= 0) {
 
         return results
