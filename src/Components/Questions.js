@@ -16,7 +16,7 @@ const Questions = () => {
             answer6:answer6}
 }
 
-let {currentQuestion, setCurrentQuestion, arrayOfAnswers, setArrayOfAnswers, setWinningHero } = useContext(AppContext) 
+let {currentQuestion, setCurrentQuestion, arrayOfAnswers, setArrayOfAnswers, setWinningHero, randomBackground } = useContext(AppContext) 
 
 const arrayOfQuestions = [
     
@@ -167,7 +167,7 @@ function selectAnswer(e) {
     document.querySelector('.next').classList.remove('hidden')
 }
 
-function countAnswers(arrayOfAnswers, results = { answer1 : 0, answer2 : 0, answer3 : 0, answer4 : 0, answer5 : 0, answer6 : 0, answer7: 0}) {
+function countAnswers(arrayOfAnswers, results = { answer1 : 0, answer2 : 0, answer3 : 0, answer4 : 0, answer5 : 0, answer6 : 0 }) {
         
     for(const answer in results){
         
@@ -234,17 +234,24 @@ useEffect(() => {
 
     return(
         <header className="App-header">
+
             <div className="questions-container">
+
                 <div className="question"><p>{arrayOfQuestions[currentQuestion].question}</p></div>
+
                 <div onClick={(e) => {selectAnswer(e)}} className="answer clickable" id="answer1"><p>{arrayOfQuestions[currentQuestion].answer1}</p></div>
                 <div onClick={(e) => {selectAnswer(e)}} className="answer clickable" id="answer2"><p>{arrayOfQuestions[currentQuestion].answer2}</p></div>
                 <div onClick={(e) => {selectAnswer(e)}} className="answer clickable" id="answer3"><p>{arrayOfQuestions[currentQuestion].answer3}</p></div>
                 <div onClick={(e) => {selectAnswer(e)}} className="answer clickable" id="answer4"><p>{arrayOfQuestions[currentQuestion].answer4}</p></div>
                 <div onClick={(e) => {selectAnswer(e)}} className="answer clickable" id="answer5"><p>{arrayOfQuestions[currentQuestion].answer5}</p></div>
                 <div onClick={(e) => {selectAnswer(e)}} className="answer clickable" id="answer6"><p>{arrayOfQuestions[currentQuestion].answer6}</p></div>
+
                 <Previous currentQuestion={currentQuestion}/>
+
                 <Next currentQuestion={currentQuestion}/>
+
             </div>    
+
         </header>
     )
 }

@@ -1,24 +1,127 @@
+.container {
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 10px;
+    border: 3px solid black;
+    height: 75vh;
+    width: 50vh;
+    background-color: white;
+    background-image: url('https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/301964/429076/jun190851__33240.1563467042.jpg?c=2&imbypass=on');
+    background-size: 100% 100%;
+}
+
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel1 {
+    border: 2px solid black;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 4;
+}
+
+.panel1 img {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.panel2 {
+    grid-column: 1 / span 8;
+    grid-row: 5 / span 6;
+    border: 2px solid black;
+}
+
+.panel2 img {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.panel3 {
+    grid-column: 9 / span 4;
+    grid-row: 5 / span 6;
+    border: 2px solid black;
+}
+
+.panel3 img {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.panel4 {
+    grid-column: 1 / span 12;
+    grid-row: 11 / span 2;
+    border: 2px solid black;
+}
+
+.panel4 a {
+    height: 100%;
+    width: 100%;
+}
+
 .intro {
     font-weight: bold;
-    border: 3px solid black;
-    color: black;
-    background-color: #FFFF00;
-    padding: 10px;
+    border: 2px solid black;
+    color: black; 
+    background-image:radial-gradient(circle, yellow, orange);
+    grid-column: 3 / span 10;
+    grid-row: 2 / span 1;
 }
 
-button {
+.panel4 button {
     background-color: #FFFF00;
-    border: 3px solid black;
     padding: 10px;
     font-weight: bold;
+    height: 100%;
+    width: 100%;
+    font-family: inherit;
+    font-size: larger;
+    border: none;
+    background-image:radial-gradient(circle, yellow, orange);
 }
 
-button:hover {
+.panel4 button:hover {
+    background-image: unset;
     background-color: black;
-    color: #FFFF00;
-    border-color: #FFFF00;
+    background-image:radial-gradient(circle, orange, red);
 }
 
 img {
     border: 3px solid black;
+}
+
+.musicPlayer {
+    border: 2px solid black;
+    grid-column: 7 / span 4;
+    grid-row: 3 / span 1;
+}
+
+.musicPlayer button {
+    background-color: #FFFF00;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+    font-family: inherit;
+    font-size: large;
+    border: none;
+    background-image:radial-gradient(circle, yellow, orange);
+}
+
+.speech{
+    background-color: #fff;
+    border:solid 2px #000;
+    border-radius:12px;
+    display:inline-block;
+    margin:.5em;
+    padding:.5em 1em;
+    position:relative;
+
+
 }

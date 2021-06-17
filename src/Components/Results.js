@@ -41,36 +41,26 @@ const Results = () => {
             
         }
         
-        async function getCharacterThumbnail(winningHero){
+        async function getCharacterInfo(winningHero){
 
             let id = getWinningID(winningHero)
             let ts = Date.now()
             let md5Hash = MD5(`${ts}c97d166646fd9693e047bb4db704549ef2c6982b57a9282eee09f642116d68d165ec7808`).toString()
             let url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=57a9282eee09f642116d68d165ec7808&hash=${md5Hash}`
             
+           try{
             let response = await fetch(url)
             .then(data => data.json())
-            .then(data => setWinningHeroThumbnail(data.data.results[0].thumbnail))
+            .then(data => {
+                setWinningHeroDescription(data.data.results[0].description)
+                setWinningHeroThumbnail(data.data.results[0].thumbnail)})
 
-            return response
+            return response} catch(error){
+                return (error)
+            }
         }
 
-        async function getCharacterDescription(winningHero){
-
-            let id = getWinningID(winningHero)
-            let ts = Date.now()
-            let md5Hash = MD5(`${ts}c97d166646fd9693e047bb4db704549ef2c6982b57a9282eee09f642116d68d165ec7808`).toString()
-            let url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=57a9282eee09f642116d68d165ec7808&hash=${md5Hash}`
-            
-            let response = await fetch(url)
-            .then(data => data.json())
-            .then(data => setWinningHeroDescription(data.data.results[0].description))
-
-            return response
-        }
-
-        getCharacterThumbnail(winningHero)
-        getCharacterDescription(winningHero)
+        getCharacterInfo(winningHero)
 
     }, [])
 
@@ -78,19 +68,26 @@ const Results = () => {
 
         <header className="App-header">
 
-            <img className="thumbnail" src = {`${winningHeroThumbnail.path}.${winningHeroThumbnail.extension}`} alt="image"></img>
+        <div className="results-container">
 
-            <div className="results"><p>You are {winningHero}!</p></div>
+            <div className="thumbnail"><img  src = {`${winningHeroThumbnail.path}.${winningHeroThumbnail.extension}`} alt="image"></img></div>
+
+            <div className="results">You are {winningHero}!</div>
 
             <div className="description">{winningHeroDescription || "This Hero does not have a descprtion!"}</div>
 
-            <Link exact to = '/'>
-            
-            <button name="reset">
-                TAKE THE QUIZ AGAIN?
-            </button>
-            
-            </Link>
+            <div className="reset">
+
+                <Link exact to = '/'>
+                
+                <button name="reset">
+                    TAKE THE QUIZ AGAIN?
+                </button>
+                
+                </Link>
+            </div>
+
+        </div>
 
         </header>
     )

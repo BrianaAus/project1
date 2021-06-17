@@ -7,12 +7,16 @@ import AppContext from "./Contexts/AppContext";
 import { useState } from 'react'
 
 function App() {
-
+  let url = `https://medea-music.com/wp-content/uploads/2018/05/The-Avengers-Theme-Song.mp3?_=2`
   let [currentQuestion, setCurrentQuestion] = useState(0) 
   let [arrayOfAnswers, setArrayOfAnswers] = useState([])
   let [winningHero, setWinningHero] = useState('')
   let [winningHeroThumbnail, setWinningHeroThumbnail] = useState({})
   let [winningHeroDescription, setWinningHeroDescription] = useState('')
+  let [randomBackground, setRandomBackground] = useState(null)
+  //for audio player Player.js
+  let [playing, setPlaying] = useState(false)
+  let [audio, setAudio] = useState(new Audio(url))
 
   return (
     
@@ -27,7 +31,14 @@ function App() {
         winningHeroThumbnail,
         setWinningHeroThumbnail,
         winningHeroDescription,
-        setWinningHeroDescription
+        setWinningHeroDescription,
+        randomBackground,
+        setRandomBackground,
+        //Player.js
+        playing,
+        setPlaying,
+        audio,
+        setAudio,
       }}>
 
     <div className="App-background"></div>
