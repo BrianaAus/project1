@@ -1,3 +1,19 @@
+### A simple Buzzfeed-like quiz using the Marvel API
+
+This was our first project with Galvanize. 
+
+Instructions: 
+
+You must use your own personal public and private key from the marvel API and insert it in the "Results.js" file. 
+
+![Preview1](./images/ourWebsite1.png)
+
+![Preview2](./images/ourWebsite2.png)
+
+![Preview3](./images/ourWebsite3.png)
+
+by barrazedier & BrianaAus
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
