@@ -4,7 +4,7 @@ This was our first project with Galvanize.
 
 Instructions: 
 
-You must use your own personal public and private key from the marvel API and insert it in the "Results.js" file. 
+You must use your own personal public and private key from the Marvel API and insert it in the "Results.js" file. 
 
 ![Preview1](./images/ourWebsite1.png)
 
