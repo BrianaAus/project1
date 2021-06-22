@@ -4,6 +4,8 @@ This was our first project with Galvanize.
 
 Instructions: 
 
+Fork, clone, and npm install
+
 You must use your own personal public and private key from the Marvel API and insert it in the "Results.js" file. 
 
 ![Preview1](./images/ourWebsite1.png)
@@ -13,6 +15,10 @@ You must use your own personal public and private key from the Marvel API and in
 ![Preview3](./images/ourWebsite3.png)
 
 by barrazedier & BrianaAus
+
+To-do: 
+
+Replace random images with images from the API. 
 
 # Getting Started with Create React App
 
