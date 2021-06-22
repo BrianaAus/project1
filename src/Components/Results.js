@@ -45,8 +45,8 @@ const Results = () => {
 
             let id = getWinningID(winningHero) || '1009407'
             let ts = Date.now()
-            let privateKey = 'c97d166646fd9693e047bb4db704549ef2c6982b'
-            let publicKey = '57a9282eee09f642116d68d165ec7808'
+            let privateKey = ''
+            let publicKey = ''
             let md5Hash = MD5(`${ts}${privateKey}${publicKey}`).toString()
             let url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=${publicKey}&hash=${md5Hash}`
 
